@@ -1,0 +1,17 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Listar pacientes" />
+  <ListView items='{{ pacientes }}' itemTap="onItemTap">
+    <ListView.itemTemplate>
+      <GridLayout columns="*, *, *, *, *">
+        <Label text='{{ nombre }}' col="0" />
+        <Label text='{{ apellido }}' col="1" />
+        <Label text='{{ edad }}' col="2" />
+        <Label text='{{ telefono }}' col="3" />
+        <Label text='{{ identificacion }}' col="4" />
+        <Button text="Eliminar" tap="eliminarPaciente" col="5" />
+      </GridLayout>
+    </ListView.itemTemplate>
+  </ListView>
+  <Button text="Agregar pacientes" tap="irAgregarPaciente" />
+</Page>
+

@@ -1,0 +1,24 @@
+<Page xmlns="http://schemas.nativescript.org/tns.xsd" loaded="pageLoaded">
+  <ActionBar title="Metodo agregar pacientes" />
+  <StackLayout>
+    <ListView items="{{ pacientes }}" itemTap="onItemTap">
+      <ListView.itemTemplate>
+        <GridLayout columns="auto, *, auto">
+          <Label text="{{ nombre }}" col="0" />
+          <Label text="{{ apellido }}" col="1" />
+          <Button text="Eliminar" tap="eliminarPaciente" col="2" />
+        </GridLayout>
+      </ListView.itemTemplate>
+    </ListView>
+    <StackLayout>
+      <Label text="Agregar Nuevo Paciente" />
+      <TextField hint="Nombre" text="{{ nuevoPaciente.nombre }}" />
+      <TextField hint="Apellido" text="{{ nuevoPaciente.apellido }}" />
+      <TextField hint="Edad" keyboardType="number" text="{{ nuevoPaciente.edad }}" />
+      <TextField hint="Teléfono" keyboardType="phone" text="{{ nuevoPaciente.telefono }}" />
+      <TextField hint="Identificación" text="{{ nuevoPaciente.identificacion }}" />
+      <Button text="Agregar Paciente" tap="agregarPaciente" />
+      <Button text="Listar Pacientes" tap="irAListaPacientes" />
+    </StackLayout>
+  </StackLayout>
+</Page>
